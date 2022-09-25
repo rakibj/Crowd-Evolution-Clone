@@ -10,7 +10,7 @@ namespace RakibJahan
         {
             if (other.CompareTag("Modifier"))
             {
-                var modifier = other.GetComponent<ModifierLog>();
+                var modifier = other.GetComponent<ModifierBase>();
                 if (modifier)
                 {
                     modifier.Modify(this);
