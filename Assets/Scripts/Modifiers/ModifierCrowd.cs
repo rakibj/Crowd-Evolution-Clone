@@ -8,19 +8,16 @@ namespace Modifiers
 {
     public class ModifierCrowd : ModifierBase
     {
-        [SerializeField] private Image backgroundImage;
-        [SerializeField] private TMP_Text amountText;
+        [SerializeField] private ModifierView modifierView;
         [SerializeField] private int crowdModifyAmount = 2;
-        [SerializeField] private Color positiveColor;
-        [SerializeField] private Color negativeColor;
         private bool _isPositive;
 
         private void Start()
         {
             _isPositive = crowdModifyAmount > 0;
-            backgroundImage.color = _isPositive ? positiveColor : negativeColor;
-            amountText.text = _isPositive ? "+" + crowdModifyAmount : "" + crowdModifyAmount;
+            modifierView.SetVisuals(_isPositive, crowdModifyAmount);
         }
+
 
         public override void Modify(PlayerController playerController)
         {
