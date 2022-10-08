@@ -9,12 +9,16 @@ namespace RakibJahan
         [SerializeField] private float damagePerShootable = 100f;
         [SerializeField] private Shootable shootablePrefab;
         [SerializeField] private Transform shootFrom;
+        [SerializeField] private float damageAddPerYear = 2f;
         private float _shootDelay;
         private float _runningTimer;
+        private float _damagePerShootable;
+        private int _year = 0;
 
         private void Start()
         {
             _shootDelay = defaultShootDelay;
+            _damagePerShootable = damagePerShootable;
         }
 
         private void Update()
@@ -27,9 +31,16 @@ namespace RakibJahan
             }
         }
 
+        public void UpdateWeaponYear(int toAdd)
+        {
+            _year += toAdd;
+            var damageToAdd = _year * damageAddPerYear;
+            _damagePerShootable = damagePerShootable + damageToAdd;
+        }
+        
         public void Shoot()
         {
-            Instantiate(shootablePrefab, shootFrom.position, Quaternion.identity).Init(damagePerShootable);
+            Instantiate(shootablePrefab, shootFrom.position, Quaternion.identity).Init(_damagePerShootable);
         }
     }
 }
