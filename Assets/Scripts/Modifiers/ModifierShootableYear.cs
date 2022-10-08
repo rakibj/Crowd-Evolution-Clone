@@ -18,10 +18,7 @@ namespace Modifiers
         public override void Modify(PlayerController playerController)
         {
             var playerCrowd = playerController.GetComponent<PlayerCrowd>();
-            foreach (var shooter in playerCrowd.Shooters)      
-            {
-                shooter.UpdateWeaponYear(yearToAdd);
-            }
+            playerCrowd.AddYearToCrowd(yearToAdd);
         }
     }
 }

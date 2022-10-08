@@ -16,11 +16,21 @@ namespace RakibJahan
         [ContextMenu("Set")]
         public void Debug_ResizeCrowd() => Set(crowdSizeForDebug);
 
+        private int _year;
+
         private void Start()
         {
             Set(startingCrowdSize);
         }
 
+        public void AddYearToCrowd(int yearToAdd)
+        {
+            _year += yearToAdd;
+            foreach (var shooter in _shooters)      
+            {
+                shooter.UpdateWeaponYear(yearToAdd);
+            }
+        }
         public void Set(int amount)
         {
             if (_shooters.Count == amount) return;
