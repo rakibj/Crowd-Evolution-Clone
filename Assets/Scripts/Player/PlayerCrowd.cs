@@ -12,7 +12,7 @@ namespace RakibJahan
         [SerializeField] private PlayerShooter shooterPrefab;
         [SerializeField] private List<Transform> spawnPoints = new List<Transform>();
         private List<PlayerShooter> _shooters = new List<PlayerShooter>();
-
+        public List<PlayerShooter> Shooters => _shooters;
         [ContextMenu("Set")]
         public void Debug_ResizeCrowd() => Set(crowdSizeForDebug);
 
