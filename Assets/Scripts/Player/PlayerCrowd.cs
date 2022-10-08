@@ -40,10 +40,11 @@ namespace RakibJahan
 
         public bool CanRemove()
         {
-            return _shooters.Count - 1 >= 0;
+            return _shooters.Count - 2 >= 0;
         }
         public void RemoveShooter()
         {
+            if (!CanRemove()) return;
             var lastShooter = _shooters[_shooters.Count - 1];
             _shooters.Remove(lastShooter);
             Destroy(lastShooter.gameObject);
@@ -51,6 +52,7 @@ namespace RakibJahan
 
         public void AddShooter()
         {
+            if (!CanAdd()) return;
             var lastShooterIndex = _shooters.Count - 1;
             var position = spawnPoints[lastShooterIndex + 1].position;
             var shooter = Instantiate(shooterPrefab, position, Quaternion.identity, transform);
