@@ -19,7 +19,7 @@ namespace Modifiers
         {
             _isPositive = crowdModifyAmount > 0;
             backgroundImage.color = _isPositive ? positiveColor : negativeColor;
-            amountText.text = _isPositive ? "+" + crowdModifyAmount : "-" + crowdModifyAmount;
+            amountText.text = _isPositive ? "+" + crowdModifyAmount : "" + crowdModifyAmount;
         }
 
         public override void Modify(PlayerController playerController)
