@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace RakibJahan
@@ -16,11 +17,14 @@ namespace RakibJahan
         [ContextMenu("Set")]
         public void Debug_ResizeCrowd() => Set(crowdSizeForDebug);
 
+        [SerializeField] private TMP_Text yearText;
+
         private int _year;
 
         private void Start()
         {
             Set(startingCrowdSize);
+            yearText.text = _year.ToString();
         }
 
         public void AddYearToCrowd(int yearToAdd)
@@ -30,6 +34,7 @@ namespace RakibJahan
             {
                 shooter.UpdateWeaponYear(yearToAdd);
             }
+            yearText.text = _year.ToString();
         }
         public void Set(int amount)
         {
