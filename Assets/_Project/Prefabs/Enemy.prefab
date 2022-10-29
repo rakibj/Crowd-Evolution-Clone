@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 8153590576437973873}
-  hitPoints: 10
+  hitPoints: 100
 --- !u!136 &2327739542082864071
 CapsuleCollider:
   m_ObjectHideFlags: 0

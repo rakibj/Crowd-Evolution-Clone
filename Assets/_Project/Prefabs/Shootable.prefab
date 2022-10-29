@@ -61,6 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379aa4a782ad41b4a1afa543ff0b2df1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootableSurviveTime: 2
 --- !u!65 &5422325040602234573
 BoxCollider:
   m_ObjectHideFlags: 0
