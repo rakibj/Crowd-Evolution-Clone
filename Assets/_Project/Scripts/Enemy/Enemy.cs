@@ -20,6 +20,7 @@ namespace _Project.Scripts.Enemy
             if (_currentHitPoints <= 0f)
             {
                 animator.SetBool("isDead", true);
+                GetComponent<Collider>().enabled = false;
                 GetComponentInChildren<Renderer>().material.SetColor("_Color", Color.gray);
             }
         }
